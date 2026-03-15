@@ -3,6 +3,7 @@ import Link from "next/link";
 export default function Navbar() {
   return (
     <nav
+      className="navbar"
       style={{
         display: "flex",
         justifyContent: "space-between",
@@ -17,8 +18,6 @@ export default function Navbar() {
         style={{
           fontSize: "22px",
           fontWeight: "bold",
-          textDecoration: "none",
-          color: "black",
         }}
       >
         chengduoXuan
