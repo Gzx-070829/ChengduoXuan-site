@@ -1,5 +1,4 @@
 import Link from "next/link";
-import BackHomeLink from "../components/BackHomeLink";
 
 const articles = [
   { title: "KNN", slug: "knn" },
@@ -24,7 +23,9 @@ export default function AIPage() {
         </ul>
       </div>
 
-      <BackHomeLink />
+      <p style={{ marginTop: 24 }}>
+        <Link href="/">← 返回首页</Link>
+      </p>
     </main>
   );
 }
