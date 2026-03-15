@@ -1,14 +1,37 @@
+import { notFound } from "next/navigation";
 import BackHomeLink from "../../components/BackHomeLink";
+import {
+  getAIArticleBySlug,
+  getAIArticlesMeta,
+  markdownToHtml,
+} from "../../../lib/aiArticles";
 
-export default function Article({
+export function generateStaticParams() {
+  return getAIArticlesMeta().map((article) => ({ slug: article.slug }));
+}
+
+export default async function Article({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
+  const { slug } = await params;
+  const article = getAIArticleBySlug(slug);
+
+  if (!article) {
+    notFound();
+  }
+
+  const html = markdownToHtml(article.content);
+
   return (
     <main style={{ padding: 40 }}>
-      <h1>Article: {params.slug}</h1>
-      <p>This is a placeholder article page.</p>
+      <h1>{article.title}</h1>
+      {article.date ? <p style={{ color: "#666" }}>{article.date}</p> : null}
+      <article
+        style={{ marginTop: 24, lineHeight: 1.8 }}
+        dangerouslySetInnerHTML={{ __html: html }}
+      />
       <BackHomeLink />
     </main>
   );
