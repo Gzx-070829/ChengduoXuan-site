@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import BackHomeLink from "../../components/BackHomeLink";
+import GiscusComments from "../../components/GiscusComments";
 import { getArticleBySlug, getArticlesMeta, markdownToHtml } from "../../../lib/content";
 
 const BCI_COLUMN = "bci";
@@ -30,6 +31,7 @@ export default async function Article({
         style={{ marginTop: 24, lineHeight: 1.8 }}
         dangerouslySetInnerHTML={{ __html: html }}
       />
+      <GiscusComments category="bci" slug={slug} />
       <BackHomeLink />
     </main>
   );
