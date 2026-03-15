@@ -1,6 +1,5 @@
 import { notFound } from "next/navigation";
 import BackHomeLink from "../../components/BackHomeLink";
-import GiscusComments from "../../components/GiscusComments";
 import {
   getAIArticleBySlug,
   getAIArticlesMeta,
@@ -33,7 +32,6 @@ export default async function Article({
         style={{ marginTop: 24, lineHeight: 1.8 }}
         dangerouslySetInnerHTML={{ __html: html }}
       />
-      <GiscusComments category="ai" slug={slug} />
       <BackHomeLink />
     </main>
   );
