@@ -63,10 +63,3 @@ export default function Home() {
     </main>
   );
 }
-
-const cardStyle = {
-  border: "1px solid #ddd",
-  borderRadius: "16px",
-  padding: "20px",
-  backgroundColor: "#fafafa",
-};

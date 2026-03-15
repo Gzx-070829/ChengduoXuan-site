@@ -13,25 +13,26 @@ export default function Card({ title, description, link }: CardProps) {
     <Link href={link} style={{ textDecoration: "none", color: "inherit" }}>
       <div
         style={{
-          border: "1px solid #ddd",
+          border: "1px solid var(--card-border)",
           borderRadius: "16px",
           padding: "20px",
-          backgroundColor: "#fafafa",
+          backgroundColor: "var(--card-background)",
+          color: "var(--card-text)",
           cursor: "pointer",
           transition: "all 0.2s ease",
-          boxShadow: "0 2px 6px rgba(0,0,0,0.05)",
+          boxShadow: "var(--card-shadow)",
         }}
         onMouseEnter={(e) => {
           e.currentTarget.style.transform = "scale(1.04)";
-          e.currentTarget.style.boxShadow = "0 8px 20px rgba(0,0,0,0.12)";
+          e.currentTarget.style.boxShadow = "var(--card-shadow-hover)";
         }}
         onMouseLeave={(e) => {
           e.currentTarget.style.transform = "scale(1)";
-          e.currentTarget.style.boxShadow = "0 2px 6px rgba(0,0,0,0.05)";
+          e.currentTarget.style.boxShadow = "var(--card-shadow)";
         }}
       >
-        <h3>{title}</h3>
-        <p>{description}</p>
+        <h3 style={{ color: "var(--card-title)" }}>{title}</h3>
+        <p style={{ color: "var(--card-description)" }}>{description}</p>
       </div>
     </Link>
   );
