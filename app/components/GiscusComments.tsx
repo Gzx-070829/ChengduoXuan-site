@@ -48,7 +48,9 @@ export default function GiscusComments({ category, slug }: GiscusCommentsProps) 
     script.setAttribute("data-category", config.category);
     script.setAttribute("data-category-id", config.categoryId ?? "");
     script.setAttribute("data-mapping", config.mapping);
-    script.setAttribute("data-term", `${category}/${slug}`);
+    if (config.mapping !== "pathname") {
+      script.setAttribute("data-term", `${category}/${slug}`);
+    }
     script.setAttribute("data-reactions-enabled", config.reactionsEnabled);
     script.setAttribute("data-emit-metadata", config.emitMetadata);
     script.setAttribute("data-input-position", config.inputPosition);
