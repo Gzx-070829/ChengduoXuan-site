@@ -1,6 +1,6 @@
 "use client";
 
-const ISSUE_URL = "https://github.com/Gzx-070829/ChengduXuan-site/issues/new";
+const ISSUE_URL = "https://github.com/Gzx-070829/ChengduoXuan-site/issues/new";
 
 export default function FeedbackPage() {
   const handleGiveFeedback = () => {
