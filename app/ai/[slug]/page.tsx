@@ -1,9 +1,9 @@
 import { notFound } from "next/navigation";
 import BackHomeLink from "../../components/BackHomeLink";
+import ArticleContent from "../../components/ArticleContent";
 import {
   getAIArticleBySlug,
   getAIArticlesMeta,
-  markdownToHtml,
 } from "../../../lib/aiArticles";
 
 export function generateStaticParams() {
@@ -22,16 +22,11 @@ export default async function Article({
     notFound();
   }
 
-  const html = markdownToHtml(article.content);
-
   return (
-    <main style={{ padding: 40 }}>
+    <main className="article-page">
       <h1>{article.title}</h1>
-      {article.date ? <p style={{ color: "#666" }}>{article.date}</p> : null}
-      <article
-        style={{ marginTop: 24, lineHeight: 1.8 }}
-        dangerouslySetInnerHTML={{ __html: html }}
-      />
+      {article.date ? <p className="article-date">{article.date}</p> : null}
+      <ArticleContent content={article.content} />
       <BackHomeLink />
     </main>
   );
