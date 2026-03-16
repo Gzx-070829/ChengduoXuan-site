@@ -9,7 +9,7 @@ export default function Navbar() {
         justifyContent: "space-between",
         alignItems: "center",
         padding: "20px 40px",
-        borderBottom: "1px solid #eee",
+        borderBottom: "1px solid var(--border-color)",
         marginBottom: "40px",
       }}
     >
