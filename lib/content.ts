@@ -113,6 +113,14 @@ function escapeHtml(text: string) {
 }
 
 function parseInlineMarkdown(text: string) {
+  function parseInlineText(segment: string) {
+    return escapeHtml(segment)
+      .replace(/\*\*([^*\n]+)\*\*/g, "<strong>$1</strong>")
+      .replace(/__([^_\n]+)__/g, "<strong>$1</strong>")
+      .replace(/\*([^*\n]+)\*/g, "<em>$1</em>")
+      .replace(/_([^_\n]+)_/g, "<em>$1</em>");
+  }
+
   const tokens: string[] = [];
   const pattern = /(`[^`]+`)|(\[[^\]]+\]\(([^)\s]+)(?:\s+"([^"]*)")?\))/g;
   let lastIndex = 0;
@@ -120,7 +128,7 @@ function parseInlineMarkdown(text: string) {
 
   while (match) {
     if (match.index > lastIndex) {
-      tokens.push(escapeHtml(text.slice(lastIndex, match.index)));
+      tokens.push(parseInlineText(text.slice(lastIndex, match.index)));
     }
 
     if (match[1]) {
@@ -138,7 +146,7 @@ function parseInlineMarkdown(text: string) {
   }
 
   if (lastIndex < text.length) {
-    tokens.push(escapeHtml(text.slice(lastIndex)));
+    tokens.push(parseInlineText(text.slice(lastIndex)));
   }
 
   return tokens.join("");
