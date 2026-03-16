@@ -1,36 +1,49 @@
+"use client";
+
 import Link from "next/link";
+import { useState } from "react";
+
+const navItems = [
+  { href: "/ai", label: "AI" },
+  { href: "/bci", label: "BCI" },
+  { href: "/programming", label: "Programming" },
+  { href: "/literature", label: "Literature" },
+  { href: "/daily", label: "Daily" },
+  { href: "/projects", label: "Projects" },
+  { href: "/feedback", label: "Feedback" },
+];
 
 export default function Navbar() {
-  return (
-    <nav
-      className="navbar"
-      style={{
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        padding: "20px 40px",
-        borderBottom: "1px solid var(--border-color)",
-        marginBottom: "40px",
-      }}
-    >
-      <Link
-        href="/"
-        style={{
-          fontSize: "22px",
-          fontWeight: "bold",
-        }}
-      >
-        chengduoXuan
-      </Link>
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-      <div style={{ display: "flex", gap: "20px", fontSize: "16px" }}>
-        <Link href="/ai">AI</Link>
-        <Link href="/bci">BCI</Link>
-        <Link href="/programming">Programming</Link>
-        <Link href="/literature">Literature</Link>
-        <Link href="/daily">Daily</Link>
-        <Link href="/projects">Projects</Link>
-        <Link href="/feedback">Feedback</Link>
+  return (
+    <nav className="navbar" aria-label="Main navigation">
+      <div className="navbar__header">
+        <Link href="/" className="navbar__brand" onClick={() => setIsMenuOpen(false)}>
+          chengduoXuan
+        </Link>
+
+        <button
+          type="button"
+          className="navbar__toggle"
+          aria-expanded={isMenuOpen}
+          aria-controls="mobile-navigation"
+          aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+          onClick={() => setIsMenuOpen((prev) => !prev)}
+        >
+          <span aria-hidden="true">☰</span>
+        </button>
+      </div>
+
+      <div
+        id="mobile-navigation"
+        className={`navbar__links ${isMenuOpen ? "navbar__links--open" : ""}`}
+      >
+        {navItems.map((item) => (
+          <Link key={item.href} href={item.href} onClick={() => setIsMenuOpen(false)}>
+            {item.label}
+          </Link>
+        ))}
       </div>
     </nav>
   );
