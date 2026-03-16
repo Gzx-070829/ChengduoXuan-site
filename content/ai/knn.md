@@ -1,6 +1,6 @@
 ---
 title: KNN
-date: 2026-03-10
+date: 2026-03-15
 summary: 用最简单的方式理解 KNN（K-近邻）算法。
 ---
 
