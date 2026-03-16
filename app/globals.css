@@ -167,7 +167,7 @@ a:visited {
 }
 
 .article-page {
-  max-width: 820px;
+  max-width: 720px;
   margin: 0 auto;
   padding: 40px 24px 56px;
 }
@@ -178,8 +178,9 @@ a:visited {
 }
 
 .article-content {
-  margin-top: 28px;
-  line-height: 1.78;
+  max-width: 720px;
+  margin: 32px auto 0;
+  line-height: 1.8;
   font-size: 1.06rem;
   text-wrap: pretty;
   color: var(--foreground);
@@ -194,26 +195,32 @@ a:visited {
   line-height: 1.28;
   letter-spacing: -0.012em;
   font-weight: 700;
-  margin-top: 2.1em;
-  margin-bottom: 0.72em;
+  margin-top: 2.4em;
+  margin-bottom: 0.92em;
   color: color-mix(in oklab, var(--foreground) 96%, var(--muted-foreground) 4%);
 }
 
 .article-content h1 {
-  font-size: clamp(2rem, 3.8vw, 2.5rem);
-  margin-top: 1.15em;
-  margin-bottom: 0.62em;
+  font-size: 36px;
+  margin-top: 1.3em;
+  margin-bottom: 0.78em;
 }
 
 .article-content h2 {
-  font-size: clamp(1.5rem, 2.7vw, 1.9rem);
-  padding-bottom: 0.28em;
+  font-size: 26px;
+  font-weight: 700;
+  margin-top: 2.9em;
+  margin-bottom: 1.2em;
+  padding-bottom: 0.34em;
   border-bottom: 1px solid color-mix(in oklab, var(--border-color) 70%, transparent);
 }
 
 .article-content h3 {
-  font-size: clamp(1.23rem, 2vw, 1.45rem);
-  color: color-mix(in oklab, var(--foreground) 88%, var(--muted-foreground) 12%);
+  font-size: clamp(1.28rem, 2.1vw, 1.5rem);
+  font-weight: 650;
+  margin-top: 2.2em;
+  margin-bottom: 0.86em;
+  color: color-mix(in oklab, var(--foreground) 90%, var(--muted-foreground) 10%);
 }
 
 .article-content p,
@@ -221,10 +228,12 @@ a:visited {
 .article-content ol,
 .article-content blockquote,
 .article-content pre {
-  margin: 1.12em 0;
+  margin: 1.2em 0;
 }
 
 .article-content p {
+  margin-bottom: 1.45em;
+  line-height: 1.8;
   color: color-mix(in oklab, var(--foreground) 92%, var(--muted-foreground) 8%);
 }
 
@@ -240,15 +249,16 @@ a:visited {
 
 .article-content ul,
 .article-content ol {
-  padding-left: 1.5em;
+  padding-left: 1.9em;
 }
 
 .article-content li + li {
-  margin-top: 0.42em;
+  margin-top: 0.5em;
 }
 
 .article-content li > ul,
 .article-content li > ol {
+  padding-left: 1.35em;
   margin-top: 0.5em;
 }
 
