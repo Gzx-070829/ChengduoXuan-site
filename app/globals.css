@@ -3,9 +3,16 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --muted-foreground: #4b5563;
+  --surface: #ffffff;
+  --border-color: #d1d5db;
   --link: #1d4ed8;
   --link-hover: #1e40af;
   --nav-link: #111827;
+  --button-background: #ffffff;
+  --button-hover-background: #f9fafb;
+  --button-foreground: #111827;
+  --button-border: #d1d5db;
   --card-background: #fafafa;
   --card-border: #ddd;
   --card-text: #111827;
@@ -26,9 +33,16 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --muted-foreground: #d1d5db;
+    --surface: #111827;
+    --border-color: #374151;
     --link: #93c5fd;
     --link-hover: #bfdbfe;
     --nav-link: #f3f4f6;
+    --button-background: #1f2937;
+    --button-hover-background: #374151;
+    --button-foreground: #f9fafb;
+    --button-border: #4b5563;
     --card-background: #111827;
     --card-border: #374151;
     --card-text: #f3f4f6;
