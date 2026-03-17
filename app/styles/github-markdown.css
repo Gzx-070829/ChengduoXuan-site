@@ -7,6 +7,7 @@
   font-size: 16px;
   line-height: 1.6;
   word-wrap: break-word;
+  color: var(--foreground);
 }
 
 .markdown-body > *:first-child {
@@ -27,6 +28,7 @@
   margin-bottom: 16px;
   font-weight: 600;
   line-height: 1.25;
+  color: var(--foreground);
 }
 
 .markdown-body h1 {
@@ -60,6 +62,28 @@
   margin-top: 0.25em;
 }
 
+.markdown-body li,
+.markdown-body li::marker {
+  color: var(--foreground);
+}
+
+.markdown-body a {
+  color: var(--link);
+}
+
+.markdown-body a:hover {
+  color: var(--link-hover);
+}
+
+.markdown-body strong {
+  color: var(--markdown-strong);
+  font-weight: 700;
+}
+
+.markdown-body em {
+  color: var(--markdown-em);
+}
+
 .markdown-body code,
 .markdown-body pre {
   font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, "Liberation Mono", monospace;
@@ -69,7 +93,8 @@
   font-size: 85%;
   padding: 0.2em 0.4em;
   border-radius: 6px;
-  background-color: color-mix(in oklab, var(--surface) 88%, var(--foreground) 12%);
+  color: var(--markdown-inline-code-fg);
+  background-color: var(--markdown-inline-code-bg);
 }
 
 .markdown-body pre {
@@ -77,18 +102,23 @@
   overflow: auto;
   border-radius: 6px;
   line-height: 1.45;
-  background-color: color-mix(in oklab, var(--surface) 82%, var(--foreground) 18%);
+  color: var(--markdown-code-block-fg);
+  background-color: var(--markdown-code-block-bg);
+  border: 1px solid var(--border-color);
 }
 
 .markdown-body pre code {
   padding: 0;
+  color: inherit;
   background: transparent;
 }
 
 .markdown-body blockquote {
-  padding: 0 1em;
+  padding: 0.25em 1em;
   color: var(--muted-foreground);
   border-left: 0.25em solid var(--border-color);
+  background: var(--markdown-quote-bg);
+  border-radius: 0 6px 6px 0;
 }
 
 .markdown-body table {
@@ -104,6 +134,12 @@
 .markdown-body table td {
   padding: 6px 13px;
   border: 1px solid var(--border-color);
+  color: var(--foreground);
+}
+
+.markdown-body table th {
+  font-weight: 600;
+  background: color-mix(in oklab, var(--surface) 88%, var(--foreground) 12%);
 }
 
 .markdown-body table tr {
@@ -111,8 +147,12 @@
   border-top: 1px solid var(--border-color);
 }
 
+.markdown-body table tr:nth-child(2n) {
+  background-color: var(--markdown-table-stripe);
+}
+
 .markdown-body hr {
-  height: 0.25em;
+  height: 1px;
   padding: 0;
   margin: 24px 0;
   background-color: var(--border-color);
