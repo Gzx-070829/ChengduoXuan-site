@@ -20,6 +20,14 @@
   --card-description: #374151;
   --card-shadow: 0 2px 6px rgba(0,0,0,0.05);
   --card-shadow-hover: 0 8px 20px rgba(0,0,0,0.12);
+  --markdown-strong: #0f172a;
+  --markdown-em: #1f2937;
+  --markdown-inline-code-fg: #1f2937;
+  --markdown-inline-code-bg: #eef2ff;
+  --markdown-code-block-bg: #111827;
+  --markdown-code-block-fg: #e5e7eb;
+  --markdown-quote-bg: #f8fafc;
+  --markdown-table-stripe: #f9fafb;
 }
 
 @theme inline {
@@ -50,6 +58,14 @@
     --card-description: #d1d5db;
     --card-shadow: 0 2px 6px rgba(0,0,0,0.35);
     --card-shadow-hover: 0 8px 20px rgba(0,0,0,0.45);
+    --markdown-strong: #ffffff;
+    --markdown-em: #e5e7eb;
+    --markdown-inline-code-fg: #bfdbfe;
+    --markdown-inline-code-bg: #1f2937;
+    --markdown-code-block-bg: #111827;
+    --markdown-code-block-fg: #e5e7eb;
+    --markdown-quote-bg: #0f172a;
+    --markdown-table-stripe: #0f172a;
   }
 }
 
