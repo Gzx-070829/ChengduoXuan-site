@@ -1,11 +1,14 @@
-import { markdownToHtml } from "../../lib/content";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 type ArticleContentProps = {
   content: string;
 };
 
 export default function ArticleContent({ content }: ArticleContentProps) {
-  const html = markdownToHtml(content);
-
-  return <article className="article-content markdown-body" dangerouslySetInnerHTML={{ __html: html }} />;
+  return (
+    <article className="article-content markdown-body">
+      <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+    </article>
+  );
 }
