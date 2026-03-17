@@ -1,7 +1,6 @@
 import {
   getArticleBySlug,
   getArticlesMeta,
-  markdownToHtml,
   type Article,
   type ArticleMeta,
 } from "./content";
@@ -19,4 +18,3 @@ export function getAIArticleBySlug(slug: string): AIArticle | null {
   return getArticleBySlug(AI_COLUMN, slug);
 }
 
-export { markdownToHtml };
